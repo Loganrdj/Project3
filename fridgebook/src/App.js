@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Nav from "./components/Nav"
-import Home from "./components/Home"
+import Fridge from "./components/Fridge"
+import Dashboard from "./components/Dashboard"
+import Recipes from "./components/Recipes"
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,10 +18,10 @@ class App extends Component {
         <div className="App">
           <Nav />
           <Switch>
-            <Route exact path="/" component={Home}/>
-            {/* <Route exact path="/resume" component={Resume}/>
-            <Route exact path="/projects" component={Projects}/>
-            <Route exact path="/contact" component={Contact}/> */}
+            <Route exact path="/dashboard" component={Dashboard}/>
+            <Route exact path="/fridge" component={Fridge}/>
+            <Route exact path="/recipes" component={Recipes}/>
+            
           </Switch>
         </div>
       </Router>
