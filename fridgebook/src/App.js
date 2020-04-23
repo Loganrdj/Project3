@@ -4,6 +4,7 @@ import Nav from "./components/Nav"
 import Fridge from "./components/Fridge"
 import Dashboard from "./components/Dashboard"
 import Recipes from "./components/Recipes"
+import Cart from "./components/Cart"
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,9 +19,11 @@ class App extends Component {
         <div className="App">
           <Nav />
           <Switch>
+            <Route exact path="/" component={Dashboard}/>
             <Route exact path="/dashboard" component={Dashboard}/>
             <Route exact path="/fridge" component={Fridge}/>
             <Route exact path="/recipes" component={Recipes}/>
+            <Route exact path="/cart" component={Cart}/>
             
           </Switch>
         </div>
