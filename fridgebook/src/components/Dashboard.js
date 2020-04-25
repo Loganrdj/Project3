@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import "./style.css";
 import axios from "axios";
+import IngredientInput from './IngredientInput';
 
 class Dashboard extends Component {
     state = {};
@@ -29,12 +30,14 @@ class Dashboard extends Component {
 
     render() {
         return (
+            
             <div>
+                
                 {console.log("++++++++++")}
                 {console.log(this.state.name)}
                 {console.log("++++++++++")}
-                This is Home Page
                 <a href='http://localhost:8080/auth/google'><button onClick={this.login}>Log In</button></a>
+                <IngredientInput></IngredientInput>
             </div>
         );
     }
