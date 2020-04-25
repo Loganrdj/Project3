@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import Nav from "./components/Nav"
 import Fridge from "./components/Fridge"
 import Dashboard from "./components/Dashboard"
@@ -10,7 +11,6 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
 
 class App extends Component {
   render(){
@@ -24,6 +24,7 @@ class App extends Component {
             <Route exact path="/fridge" component={Fridge}/>
             <Route exact path="/recipes" component={Recipes}/>
             <Route exact path="/cart" component={Cart}/>
+            <Route path="/:user" component={Dashboard} />
             
           </Switch>
         </div>
