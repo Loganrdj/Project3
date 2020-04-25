@@ -4,6 +4,7 @@ module.exports = function (sequelize, DataTypes) {
         quantity: { type: DataTypes.STRING, allowNull: false },
         date_start: { type: DataTypes.DATE, allowNull: false },
         date_expire: { type: DataTypes.DATE, allowNull: false },
+        fridge_bool: { type: DataTypes.BOOLEAN, allowNull: false}
     });
 
     Foods.associate = function(models){
