@@ -1,28 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+
+import Nav from "./components/Nav"
+import Fridge from "./components/Fridge"
+import Dashboard from "./components/Dashboard"
+import Recipes from "./components/Recipes"
+import Cart from "./components/Cart"
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
-import Home from './components/pages/Home';
-
-function App() {
-  return (
-
-    <Router>
-      <div>
-        <Switch>
-          <Route path="/" component={Home} />
-          <Route path="/:user" component={Home} />
-          
-        </Switch>
-      </div>
-    </Router>
-  );
+class App extends Component {
+  render(){
+    return (
+      <Router>
+        <div className="App">
+          <Nav />
+          <Switch>
+            <Route exact path="/" component={Dashboard}/>
+            <Route exact path="/dashboard" component={Dashboard}/>
+            <Route exact path="/fridge" component={Fridge}/>
+            <Route exact path="/recipes" component={Recipes}/>
+            <Route exact path="/cart" component={Cart}/>
+            <Route path="/:user" component={Dashboard} />
+            
+          </Switch>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
