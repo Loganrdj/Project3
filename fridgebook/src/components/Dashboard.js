@@ -4,39 +4,28 @@ import axios from "axios";
 import IngredientInput from './IngredientInput';
 
 class Dashboard extends Component {
-    state = {};
+    state = { user_name: undefined, ingredients: undefined, login: false };
 
-    login = () => {
-        return axios.get('/auth/google');
-    }
-
-    componentDidMount(){
-        let name = window.location.href.split("/");
-        name = name[name.length-1];
-        name.replace("%20"," ");
-        console.log(name);
-        this.setState({name});
-
-
-        axios.get('/profile').then((response)=>{
-            if(response){
-                console.log(response);
-            }else{
-                console.log("no response data")
+    componentDidMount() {
+        axios.get('/profile').then((response) => {
+            if (response.data) {
+                // console.log(response.data);
+                this.setState({ login: true, user_name: response.data.user_name, ingredients: response.data.ingredients });
+            } else {
+                this.setState({ login: false, user_name: undefined, ingredients: undefined });
             }
         })
     }
 
-
     render() {
         return (
-            
             <div>
-                
-                {console.log("++++++++++")}
-                {console.log(this.state.name)}
-                {console.log("++++++++++")}
-                <a href='http://localhost:8080/auth/google'><button onClick={this.login}>Log In</button></a>
+                <h1>Welcome {this.state.user_name}</h1>
+                {this.state.login ?
+                    <a href='http://localhost:8080/auth/logout'><button>Log Out</button></a>
+                    :
+                    <a type="button" href='http://localhost:8080/auth/google'><button>Log In</button></a>
+                }
                 <IngredientInput></IngredientInput>
             </div>
         );

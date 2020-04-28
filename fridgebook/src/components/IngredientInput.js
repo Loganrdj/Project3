@@ -27,41 +27,41 @@ class IngredientInput extends Component{
     render(){
         return (
             <form>
-                <div class="container">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
+                <div className="container">
+                    <div className="form-group">
+                        <label htmlFor="name">Name:</label>
                         <input type="text" 
                             onChange = {this.updateIngredient}
-                            class="form-control" 
+                            className="form-control" 
                             id="ingredient_name" 
                             placeholder="Enter Ingredient Name" 
                             name="name"
                             required>
                         </input>
                     </div>
-                    <div class="form-group">
-                        <label for="name">Expiration Date:</label>
+                    <div className="form-group">
+                        <label htmlFor="name">Expiration Date:</label>
                         <input type="date" 
                             onChange = {this.updateIngredient}
-                            class="form-control" 
+                            className="form-control" 
                             id="date_expire" 
                             placeholder="Enter Expiration Date" 
                             name="date_expire" 
                             required>
                         </input>
                     </div>
-                    <div class="form-group">
-                        <label for="name">Quantity:</label>
+                    <div className="form-group">
+                        <label htmlFor="name">Quantity:</label>
                         <input type="text" 
                             onChange = {this.updateIngredient}
-                            class="form-control" 
+                            className="form-control" 
                             id="quantity" 
                             placeholder="Enter Ingredient Quantity" 
                             name="quantity"
                             required>    
                         </input>
                     </div>
-                    <button type="submit" onClick={this.submitIngredient} class="btn btn-primary">Submit</button>
+                    <button type="submit" onClick={this.submitIngredient} className="btn btn-primary">Submit</button>
                 </div>
             </form>
         )
