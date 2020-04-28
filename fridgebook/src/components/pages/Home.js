@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import axios from "axios";
 
+// axios.defaults.withCredentials = true;
+
+
 class Home extends Component {
     state = {};
 
@@ -9,19 +12,19 @@ class Home extends Component {
         return axios.get('/auth/google');
     }
 
-    componentDidMount(){
+    componentDidMount() {
         let name = window.location.href.split("/");
-        name = name[name.length-1];
-        name.replace("%20"," ");
+        name = name[name.length - 1];
+        name.replace("%20", " ");
         console.log(name);
-        this.setState({name});
-
-
-        axios.get('/profile').then((response)=>{
-            if(response){
-                console.log(response);
-            }else{
-                console.log("no response data")
+        this.setState({ name });
+        
+        // , { withCredentials: true, credentials: "same-origin" }
+        axios.get('/profile').then((response) => {
+            if (response.data) {
+                console.log(response.data);
+            } else {
+                console.log("Didn't log")
             }
         })
     }
@@ -30,11 +33,8 @@ class Home extends Component {
     render() {
         return (
             <div>
-                {console.log("++++++++++")}
-                {console.log(this.state.name)}
-                {console.log("++++++++++")}
                 THis is Home Page
-                <a href='http://localhost:8080/auth/google'><button onClick={this.login}>Log In</button></a>
+                <a href='/auth/google'><button onClick={this.login}>Log In</button></a>
             </div>
         );
     }
