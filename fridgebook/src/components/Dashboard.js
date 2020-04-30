@@ -43,7 +43,7 @@ class Dashboard extends Component {
                 {/* --------------Replace this part with component---------------*/}
                 {/* ------------------api testing purpose only-------------------*/}
                 <div>
-                    {this.state.ingredients ? this.state.ingredients.map(x => { return (<div key={x.id}><li>{`Name:${x.name}, Quantitiy:${x.quantitiy} ,Date Start:${x.date_start}, Date Expire:${x.date_expire}`}</li><button onClick={() => this.removeIngredients(x.id)}>x</button></div>) }) : ""}
+                    {this.state.ingredients ? this.state.ingredients.map(x => { return (<div key={x.id}><li>{`Name:${x.name}, Quantitiy:${x.quantity} ,Date Start:${x.date_start}, Date Expire:${x.date_expire} Location:${(x.fridge_bool ? "Pantry" : "Fridge")}`}</li><button onClick={() => this.removeIngredients(x.id)}>x</button></div>) }) : ""}
                 </div>
                 {/*--------------------------------------------------------------*/}
 

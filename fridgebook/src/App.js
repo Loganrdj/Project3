@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Nav from "./components/Nav"
-import Fridge from "./components/Fridge"
+import Kitchen from "./components/Kitchen"
 import Dashboard from "./components/Dashboard"
 import Recipes from "./components/Recipes"
 import Cart from "./components/Cart"
@@ -21,7 +21,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Dashboard}/>
             <Route exact path="/dashboard" component={Dashboard}/>
-            <Route exact path="/fridge" component={Fridge}/>
+            <Route exact path="/kitchen" component={Kitchen}/>
             <Route exact path="/recipes" component={Recipes}/>
             <Route exact path="/cart" component={Cart}/>
           </Switch>
