@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
     <GlobalProvider>
-      <div className="font-body lg:flex">
+      
         <Nav />
         <Switch>
             <Route exact path="/" component={Dashboard}/>
@@ -25,7 +25,7 @@ function App() {
 
           </Switch>
           
-      </div>
+      
     </GlobalProvider>
     </Router>
   );

@@ -18,9 +18,6 @@ function Nav() {
                 <Link to="/recipes" className="nav-link">
                     <li className="nav-item">Recipes</li>
                 </Link>
-                <Link to="/cart" className="nav-link">
-                    <li className="nav-item">Shopping Cart</li>
-                </Link>
             </ul>
       </nav>
   );

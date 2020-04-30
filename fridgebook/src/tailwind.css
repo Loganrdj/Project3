@@ -1,0 +1,93 @@
+@tailwind base;
+
+a {
+  @apply text-orange-600;
+}
+a:hover {
+  hover: text-re-400;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind components;
+
+/* Header Styles */
+
+.header {
+  background: url('./images/wiyk-bg.jpg');
+  @apply bg-orange-400 min-h-60vh p-8 flex justify-center items-center bg-cover bg-center;
+}
+
+@screen md {
+  .header {
+    @apply min-h-40vh;
+  }
+}
+
+@screen lg {
+  .header {
+    @apply min-h-screen w-40vw;
+  }
+}
+
+/* Input Form Styles */
+
+.react-autosuggest__container {
+  @apply relative;
+}
+
+.react-autosuggest__input--open {
+  @apply rounded-b-none;
+}
+
+.react-autosuggest__input {
+  @apply bg-white px-4 py-3 rounded-md w-full border border-orange-400;
+}
+.react-autosuggest__input--focused {
+  @apply outline-none border-orange-500;
+}
+
+.react-autosuggest__suggestions-container--open {
+  @apply block absolute w-full border border-orange-200 bg-white z-10;
+}
+
+.react-autosuggest__input--open {
+  @apply rounded-b-none;
+}
+
+.react-autosuggest__suggestion {
+  @apply px-4 py-3 cursor-pointer;
+}
+
+.react-autosuggest__suggestion--highlighted {
+  @apply bg-orange-200;
+}
+
+/* Recipe Grid Styles */
+
+.recipe-grid {
+  @apply grid gap-4 grid-cols-1;
+}
+
+@screen md {
+  .recipe-grid {
+    @apply grid-cols-2;
+  }
+}
+
+@screen xl {
+  .recipe-grid {
+    @apply grid-cols-3;
+  }
+}
+
+/* Recipe Popup Styles */
+
+.popup-overlay {
+  @apply overflow-y-auto;
+}
+
+.popup-content {
+  @apply border-0 w-full max-w-3xl p-0 overflow-hidden relative !important;
+}
+
+@tailwind utilities;

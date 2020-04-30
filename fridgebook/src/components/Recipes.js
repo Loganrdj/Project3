@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import RecipesList from './RecipesList';
 import { GlobalContext } from '../context/GlobalState';
-import Header from './Header';
 
 
 const Main = () => {
@@ -49,11 +48,8 @@ const Main = () => {
     }
   };
 
-  
   return (
-
-    <div>
-    <div className="lg:w-30vw lg:max-h-100vh lg:overflow-y-auto flex flex-col justify-center">
+    <div className="lg:w-60vw lg:max-h-100vh lg:overflow-y-auto flex flex-col justify-between">
       <section className="py-16">
         <div className="px-8 max-w-5xl m-auto">
           <div className="border-b border-orange-200 pb-2 flex justify-between mb-6">
@@ -71,9 +67,9 @@ const Main = () => {
         </div>
       </section>
     </div>
-    </div>
-  
   );
 };
 
 export default Main;
+
+
