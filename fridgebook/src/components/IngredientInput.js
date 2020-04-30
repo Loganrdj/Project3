@@ -67,6 +67,27 @@ class IngredientInput extends Component {
                             required>
                         </input>
                     </div>
+                    <div className="form-group">
+                        <label htmlFor="name">Kitchen or Pantry:</label>
+                        <div>
+                        <label htmlFor="name">Kitchen</label>
+                        <input type="radio" id="fridge_bool" name="fridge_bool" value={true} onChange={this.updateIngredient}></input>
+                        </div>
+                        <div>
+                        <label htmlFor="name">Pantry</label>
+                        <input type="radio" id="fridge_bool" name="fridge_bool" value={false} onChange={this.updateIngredient}></input>
+                        </div>
+                        
+                        {/* <input type="radio"
+                            onChange={this.updateIngredient}
+                            className="form-control"
+                            id="fridge_bool"
+                            name="fridge_bool"
+                            required>
+                                <option value={true}>Fridge</option>
+                                <option value={false}>Pantry</option>
+                        </input> */}
+                    </div>
                     <button type="submit" onClick={this.submitIngredient} className="btn btn-primary">Submit</button>
                 </div>
             </form>
