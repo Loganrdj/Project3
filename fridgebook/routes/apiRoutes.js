@@ -45,11 +45,24 @@ router.route("/ingredient/:id")
     })
     // update a specific ingredient
     .put((req, res) => {
-        if (req.user){
-            if(ingredient.name && ingredient.quantity && ingredient.date_start && ingredient.date && ingredient.date_expire) {
-                db.Foods.findOneAndUpdate(req.body, { where: { UserId: req.user.id, id: req.params.id } })
-                    .then(result => res.json(result))
-                    .catch(err => res.status(422).json(err));
+        if (req.user) {
+            if(req.body.quantity > 0) {
+                db.Foods.findOne({ where: { UserId: req.user.id, id: req.params.id } })
+                    .then(result => {
+                        console.log(result)
+                        let tempQuantity = result.quantity
+                        if(result.quantity > req.body.quantity){
+                            db.Foods.update({quantity: tempQuantity - req.body.quantity}, { where: { UserId: req.user.id, id: req.params.id } })
+                            .then(result => res.json(result))
+                            .catch(err => res.status(422).json(err));
+                        } else {
+                            db.Foods.destroy({ where: { UserId: req.user.id, id: req.params.id } })
+                            .then(result => res.json(result))
+                            .catch(err => res.status(422).json(err));
+                        }
+                        
+                    })
+                
             }else{
                 res.status(422).end();
             }
