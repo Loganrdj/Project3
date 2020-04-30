@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
+
 import "./style.css";
 
+
+
+
+
 function Cart(){
-    return <h1>Shopping Cart Page</h1>
+  return <h1>Shopping Cart</h1>
+  
 }
 
 
-export default Cart;
+
+
+
+
+export default Cart
+
+
+

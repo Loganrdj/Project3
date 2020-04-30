@@ -1,34 +1,35 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
 
-import Nav from "./components/Nav"
-import Fridge from "./components/Fridge"
-import Dashboard from "./components/Dashboard"
-import Recipes from "./components/Recipes"
-import Cart from "./components/Cart"
+import { GlobalProvider } from './context/GlobalState';
+import Nav from './components/Nav';
+import Fridge from './components/Fridge';
+import Dashboard from './components/Dashboard';
+import Final from './components/Final';
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
 
-class App extends Component {
-  render(){
-    return (
-      <Router>
-        <div className="App">
-          <Nav />
-          <Switch>
+function App() {
+  return (
+    <Router>
+    <GlobalProvider>
+      <div className="font-body lg:flex">
+        <Nav />
+        <Switch>
             <Route exact path="/" component={Dashboard}/>
             <Route exact path="/dashboard" component={Dashboard}/>
             <Route exact path="/fridge" component={Fridge}/>
-            <Route exact path="/recipes" component={Recipes}/>
-            <Route exact path="/cart" component={Cart}/>
+            <Route exact path="/recipes" component={Final}/>
+
           </Switch>
-        </div>
-      </Router>
-    );
-  }
+          
+      </div>
+    </GlobalProvider>
+    </Router>
+  );
 }
 
 export default App;
+
