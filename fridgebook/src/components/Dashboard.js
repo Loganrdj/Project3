@@ -17,6 +17,18 @@ class Dashboard extends Component {
         })
     }
 
+    updateIngredients = () => {
+        axios.get('/profile').then((response) => {
+            if (response.data) this.setState({ ingredients: response.data.ingredients });
+        })
+    }
+
+    removeIngredients = (id) => {
+        axios.delete(`/api/ingredient/${id}`).then((response) => {
+            if (response.data) this.updateIngredients();
+        });
+    }
+
     render() {
         return (
             <div>
@@ -26,7 +38,15 @@ class Dashboard extends Component {
                     :
                     <a type="button" href='http://localhost:8080/auth/google'><button>Log In</button></a>
                 }
-                <IngredientInput></IngredientInput>
+                <IngredientInput afterSubmit={this.updateIngredients}></IngredientInput>
+                
+                {/* --------------Replace this part with component---------------*/}
+                {/* ------------------api testing purpose only-------------------*/}
+                <div>
+                    {this.state.ingredients ? this.state.ingredients.map(x => { return (<div key={x.id}><li>{`Name:${x.name}, Quantitiy:${x.quantity} ,Date Start:${x.date_start}, Date Expire:${x.date_expire} Location:${(x.fridge_bool ? "Pantry" : "Fridge")}`}</li><button onClick={() => this.removeIngredients(x.id)}>x</button></div>) }) : ""}
+                </div>
+                {/*--------------------------------------------------------------*/}
+
             </div>
         );
     }

@@ -16,7 +16,6 @@ function App() {
   return (
     <Router>
     <GlobalProvider>
-      
         <Nav />
         <Switch>
             <Route exact path="/" component={Dashboard}/>
@@ -32,6 +31,7 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;
 
