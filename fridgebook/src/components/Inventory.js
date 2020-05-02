@@ -25,16 +25,15 @@ function Inventory(props){
                                 <p>{item.name}</p>
                             </div>
                             <div className="col-md-1">
-                                <button className="btn btn-warning" onClick={()=> props.deleteAmount(item.id, 10)}>-10</button>
+                            </div>
+                            <div className="col-md-2">
+                                
                             </div>
                             <div className="col-md-1">
-                                <button className="btn btn-warning" onClick={()=> props.deleteAmount(item.id, 5)}>-5</button>
+                                
                             </div>
                             <div className="col-md-1">
-                                <button className="btn btn-warning" onClick={()=> props.deleteAmount(item.id, 1)}>-1</button>
-                            </div>
-                            <div className="col-md-1">
-                                <button className="btn btn-danger" onClick={()=> props.delete(item.id)}>X</button>
+                                
                             </div>
                         </div>
                         
