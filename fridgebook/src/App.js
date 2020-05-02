@@ -5,6 +5,7 @@ import Nav from './components/Nav';
 import Fridge from './components/Fridge';
 import Dashboard from './components/Dashboard';
 import Final from './components/Final';
+import Calendar from './components/Calendar/Calendar';
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,6 +23,7 @@ function App() {
             <Route exact path="/dashboard" component={Dashboard}/>
             <Route exact path="/fridge" component={Fridge}/>
             <Route exact path="/recipes" component={Final}/>
+            <Route exact path="/calendar" component={Calendar}/>
 
           </Switch>
           
